@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - myelo@localhost" uuid="315275f5-fdb5-449c-ba86-a3396de711fc">
+    <database-info product="MySQL" version="5.1.41" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="myelo"/>
+    <table name="elo_games" schema="" catalog="myelo" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idA" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idB" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ratingA" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ratingB" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="result" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="newA" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="newB" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+    <table name="elo_teams" schema="" catalog="myelo" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="played" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="rating" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="oldrating" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="wins" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="losses" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <index name="name" unique="true" columns="name"/>
+    </table>
+    <table name="lol_summoner" schema="" catalog="myelo" type="TABLE">
+      <column name="summonerId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="summonerName" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="iconId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <index name="unique_summonerId" unique="true" columns="summonerId"/>
+    </table>
+  </data-source>
+  <data-source name="MySQL - 5gbc_15477651_lolc@sql203.5gb.co" uuid="4764002f-01c1-4dc9-9b08-7ceb1fee78f1">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
