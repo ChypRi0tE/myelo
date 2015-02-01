@@ -163,7 +163,7 @@ class RiotApi {
         //add API URL to the call
         $call = self::API_URL_1_4 . $call;
 
-        return $this->request($call);
+        return $this->request($call)[$id];
     }
 
     //Gets a summoner's info given their name, instead of id.
@@ -265,7 +265,6 @@ class RiotApi {
                 unlink($cacheFile);
             }
         }
-
         //call the API and return the result
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

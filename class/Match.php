@@ -8,12 +8,17 @@
 
 class Match {
     private $_matchId;
+    private $_summonerId;
+    private $_matchType;
     private $_matchDuration;
     private $_matchCreation;
+    private $_victory;
     private $_championId;
     private $_teamId;
     private $_spell1;
     private $_spell2;
+    private $_link;
+    private $_realid;
 
     public function __construct($data) {
       $this->abreuve($data);
@@ -25,6 +30,13 @@ class Match {
     }
     public function setChampionId($championId) {
         $this->_championId = $championId;
+    }
+
+    public function getMatchType() {
+        return $this->_matchType;
+    }
+    public function setMatchType($matchType) {
+        $this->_matchType = $matchType;
     }
 
     public function getMatchCreation() {
@@ -62,11 +74,39 @@ class Match {
         $this->_spell2 = $spell2;
     }
 
+    public function getSummonerId() {
+        return $this->_summonerId;
+    }
+    public function setSummonerId($summonerId) {
+        $this->_summonerId = $summonerId;
+    }
+
     public function getTeamId() {
         return $this->_teamId;
     }
     public function setTeamId($teamId) {
         $this->_teamId = $teamId;
+    }
+
+    public function getLink() {
+        return $this->_link;
+    }
+    public function setLink($link) {
+        $this->_link = $link;
+    }
+
+    public function getVictory() {
+        return $this->_victory;
+    }
+    public function setVictory($victory) {
+        $this->_victory = $victory;
+    }
+
+    public function getRealId() {
+        return $this->_realid;
+    }
+    public function setRealId($realid) {
+        $this->_realid = $realid;
     }
 
 	public function abreuve(array $data) {
@@ -79,9 +119,10 @@ class Match {
     }
     
     public function dump() {
-      echo "Dumping Match " . $this->_matchIdid . ": <br />";
-      echo "Creation: " . $this->_matchCreation . " Duration=" . $this->_matchDuration . "<br />";
+      echo "Dumping Match " . $this->_matchId . " from summoner " . $this->_summonerId . "<br />";
+      echo "Type: " . $this->_matchType . " Creation: " . $this->_matchCreation . " Duration=" . $this->_matchDuration . "<br />";
       echo "Champion: id=" . $this->_championId . " Team=" . $this->_teamId . "<br />";
-      echo "Summoners: " . $this->_spell1 . " et " . $this->_spell2 . "<br />";
+      echo "Summoners: " . $this->_spell1 . " et " . $this->_spell2;
     }
-} 
+}
+?>

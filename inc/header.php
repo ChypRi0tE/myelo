@@ -6,7 +6,7 @@
 	<meta name="keywords" content="League of Legends, Rating, classement, equipes, ranked team, french, francais">
 	<meta name="description" content="Description">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Classement des teams Françaises</title>
+	<title>Elo League France</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -28,10 +28,11 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <?php $_DEBUG_ = false;
+      $_LOCAL_ = false;
 if (isset($_GET['disconnect'])) {
 	session_destroy();
 	header('Location: index.php');
 }
-include_once('inc/utils.php');
 include_once('inc/connect.php');
+include_once('inc/utils.php');
 ?>

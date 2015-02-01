@@ -19,9 +19,7 @@
           <li class="divider-vertical"></li>
           <li><a href="results.php"><i class="fa fa-line-chart"></i> Results page</a></li>
           <li class="divider-vertical"></li>
-        <?php if (!empty($_SESSION['user'])) { ?>
           <li><a href="soloq.php"><i class="fa fa-child"></i> MySoloQ</a></li>
-          <?php } ?>
         </ul>
         <?php if (!empty($_SESSION['user'])) { ?>
         <ul class="nav navbar-nav navbar-right">

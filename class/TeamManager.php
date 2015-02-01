@@ -35,7 +35,36 @@
     public function getAll()
     {
       $teams = [];
-      $q = $this->_bdd->query('SELECT * FROM elo_teams ORDER BY rating DESC');
+      $q = $this->_bdd->query('SELECT * FROM elo_teams ORDER BY ID DESC');
+      while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+        $teams[] = new Team($data);
+      }
+      return $teams;
+    }
+
+    public function getAllByRating()
+    {
+        $teams = [];
+        $q = $this->_bdd->query('SELECT * FROM elo_teams ORDER BY rating DESC');
+        while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+            $teams[] = new Team($data);
+        }
+        return $teams;
+    }
+
+    public function getAllByName()
+    {
+        $teams = [];
+        $q = $this->_bdd->query('SELECT * FROM elo_teams ORDER BY name ASC');
+        while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+            $teams[] = new Team($data);
+        }
+        return $teams;
+    }
+
+    public function getLast($nb) {
+      $teams = [];
+      $q = $this->_bdd->query('SELECT * FROM elo_teams ORDER BY ID DESC LIMIT '.$nb);
       while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
         $teams[] = new Team($data);
       }
