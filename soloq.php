@@ -1,7 +1,6 @@
 <?php include_once("inc/header.php");
 include_once("inc/riot.utils.php"); ?>
-<link rel="stylesheet" href="css/plugins/select.min.css">
-<link rel="stylesheet" href="css/plugins/table.min.css">
+<link rel="stylesheet" href="assets/css/plugins/select.min.css">
 <body>
 <?php include("inc/nav.php");
 $_DEBUG_ = false; ?>
@@ -13,7 +12,6 @@ $_DEBUG_ = false; ?>
       <br />
             <form action="#" method="get">
                 <div class="input-group">
-                    <input class="form-control target" type="text" placeholder="Search" style="display:none">
                     <input class="form-control" id="system-search" name="q" placeholder="Recherche" required>
                   <span class="input-group-btn">
                       <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
@@ -28,6 +26,7 @@ $_DEBUG_ = false; ?>
                         <option value="21183314">d0ts</option>
                         <option value="20007473">Chokichoc</option>
                         <option value="40662980">Yaaheeeeee</option>
+                        <option value="22992327">Pyoup</option>
                     </select>
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-default" name="submit"><i class="fa fa-chevron-right"></i></button>
@@ -35,17 +34,17 @@ $_DEBUG_ = false; ?>
                 </div>
             </form>
             <br /><hr />
-            <?php include("inc/teamspeak.php"); ?>
+            <?php //include("inc/teamspeak.php"); ?>
             <br /><hr />
         </div>
         <div class="col-sm-10" id="col-center">
             <table id="soloQ" class="table table-list-search" data-toggle="table"
-                 data-query-params="queryParams"
-                 data-pagination="true"
-                 data-page-list="[15,25,50,100]"
-                 data-page-size="15"
-                 data-search="true"
-                 >
+                   data-query-params="queryParams"
+                   data-pagination="true"
+                   data-page-list="[15,25,50,100]"
+                   data-page-size="15"
+                   data-search="true"
+                >
                 <thead>
                 <tr>
                     <th data-field="ID">ID</th>
@@ -62,8 +61,8 @@ $_DEBUG_ = false; ?>
                 $mmgr = new MatchManager($bdd);
                 $summonersList = [];
                 $data = $mmgr->getAll();
-                foreach ($data as $m) { 
-                ?>
+                foreach ($data as $m) {
+                    ?>
                     <tr class="<?php echo $m->getVictory() ? "game game-win" : "game game-lose"; ?>">
                         <td><?php echo $m->getMatchId(); ?></td>
                         <td><?php $sid = $m->getSummonerId();
@@ -88,30 +87,29 @@ $_DEBUG_ = false; ?>
     </div>
 </div>
 <?php include("inc/footer.php"); ?>
-<script src="js/plugins/filter.min.js"></script>
-<script src="js/plugins/select.min.js"></script>
-<script src="js/plugins/table.min.js"></script>
+<script src="assets/js/plugins/filter.min.js"></script>
+<script src="assets/js/plugins/select.min.js"></script>
+<script src="assets/js/plugins/table.min.js"></script>
 <script>
-  $('.selectpicker').selectpicker();
-  function queryParams() {
-    return {
-        type: 'owner',
-        sort: 'updated',
-        direction: 'desc',
-        page: 1
-    };
-}
-$(document).ready(function() {
-  //$(".search").hide();
-  $("#system-search").replaceWith($(".search").children());
-  
-});
-$(function () {
-  $("#soloQ").on("search.bs.table", function() {
-    $("#soloQ").bootstrapTable('togglePagination');
-  });
-});
-
+    $('.selectpicker').selectpicker();
+    function queryParams() {
+        return {
+            type: 'owner',
+            sort: 'updated',
+            direction: 'desc',
+            page: 1
+        };
+    }
+    $(document).ready(function() {
+        //$(".search").hide();
+        $("#system-search").replaceWith($(".search").children());
+        $(".fixed-table-loading").hide();
+    });
+    $(function () {
+        $("#soloQ").on("search.bs.table", function() {
+            $("#soloQ").bootstrapTable('togglePagination');
+        });
+    });
 </script>
 </body>
 </html>

@@ -2,10 +2,18 @@
 /*
  * Simpler way to load classes
  */
-function load($class) {
-	require_once 'class/' . $class . '.php';
-}
-spl_autoload_register('load');
+set_include_path($_SERVER['DOCUMENT_ROOT'] . "/myelo/");
+include_once("inc/connect.php");
+include_once("Model/Beans/Team.php");
+include_once("Model/Beans/Player.php");
+include_once("Model/Beans/Game.php");
+include_once("Model/Managers/TeamManager.php");
+include_once("Model/Managers/PlayerManager.php");
+include_once("Model/Managers/GameManager.php");
+include_once("Model/Riot/RiotApi.php");
+include_once("Model/Riot/Champion.php");
+include_once("Model/Riot/Summoner.php");
+include_once("Model/Rating/Elo.php");
 /*
  * Used to sanitize html inputs
  */
@@ -44,18 +52,12 @@ spl_autoload_register('load');
 		$evol = $game->$new() - $game->$old();
 		return ($evol < 0) ? $evol : "+" . $evol;
 	}
-	function getResult($game, $teamname, $teamnb) {
-		$teamlt = $teamnb == 1 ? 'a' : 'b';
-		$ret = ($game->getResult() == $teamnb) ? bold($teamname) : $teamname;
-		$ret .= " (". getEvolution($game, $teamlt) .")";
-		return $ret;
-	}
 /*
  * Calculates new ratings for teams
  */
 	function calculateRating($data) {
 		$elo = new Elo();
-		if ($data['result'] == 1) {
+		if ($data['result'] == $data['idA']) {
 			$data['newA'] = $elo->compute(Elo::STATUS_WIN, $data['ratingA'], $data['ratingB']);
 			$data['newB'] = $elo->compute(Elo::STATUS_LOST, $data['ratingB'], $data['ratingA']);
 		} else {
@@ -64,5 +66,5 @@ spl_autoload_register('load');
 		}
 		return $data;
 	}
-	
-?>
+setlocale (LC_TIME, 'fr_FR.utf8','fra');
+date_default_timezone_set('Europe/Paris');

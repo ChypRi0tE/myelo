@@ -1,4 +1,5 @@
 <?php
+
   class Game {
     private $_id;
     private $_idA;

@@ -42,4 +42,3 @@ function deleter($id) {
     $mgr = new MatchManager($bdd);
     $mgr->delete($id);
 }
-?>

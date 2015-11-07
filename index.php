@@ -1,71 +1,45 @@
+<?php header('Location: ladder'); ?>
 <?php include_once("inc/header.php"); ?>
-<body>
-<?php include("inc/nav.php"); ?>
+<body style="background-image:url(assets/img/bg.jpg);background-size:cover">
   <div class="container" id="content">
-  <?php include("inc/error.php"); ?>
-    <div class="row">
-      <div class="col-xs-12 col-md-7" id="col-center">
-        <h1>Classement</h1>
-        <table class="table table-striped">
-          <thead>
-          <tr>
-              <th>#</th>
-              <th>Team</th>
-              <th>Played</th>
-              <th>Win</th>
-              <th>Lose</th>
-              <th>Rating</th>
-          </tr>
-          </thead>
-          <tbody>
-          <?php
-          $n = 1;
-          $manager = new TeamManager($bdd);
-          $teams = $manager->getAllByRating();
-          if (!empty($teams)) {
-              foreach($teams as $team) { ?>
-              <tr>
-                  <td><?php echo $n; ?></td>
-                  <td><?php echo $team->getName(); ?></td>
-                  <td><?php echo $team->getPlayed(); ?></td>
-                  <td><?php echo $team->getWins(); ?></td>
-                  <td><?php echo $team->getLosses(); ?></td>
-                  <td><?php echo $team->getRating(); ?></td>
-              </tr>
-          <?php $n++; }} ?>
-          </tbody>
-      </table>
+      <div class="row destacados">
+          <div class="col-sm-4 destacados-tile" id="blog">
+              <div class="destacados-content">
+                  <img src="assets/img/2.jpg" alt="Blog" class="img-circle img-thumbnail">
+                  <h2>Blog</h2>
+                  <p>Les dernières infos du site et de la line-up Imagine Barons.</p>
+              </div>
+          </div>
+
+          <div class="col-sm-4 destacados-tile" id="ladder">
+              <div class="destacados-content">
+                  <img src="assets/img/3.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail">
+                  <h2>Ladder Français</h2>
+                  <p>Le classement ELO des meilleures teams françaises, mises à jour quotidiennes.</p>
+              </div>
+          </div>
+
+          <div class="col-sm-4 destacados-tile" id="results">
+              <div class="destacados-content">
+                  <img src="assets/img/1.jpg" alt="Resultats" class="img-circle img-thumbnail">
+                  <h2>Résultats</h2>
+                  <p>L'historique des affrontements entre les meilleures équipes françaises.</p>
+              </div>
+          </div>
       </div>
-      <div class="col-xs-12 col-md-5" id="col-right">
-          <br />
-        <div class="well" id="whatisthis">
-        	<p class="lead">What is this ?</p>
-            </div>
-            <div class="well" id="recent_games">
-                <p class="lead">Derniers résultats</p>
-                <?php
-                    $n = 1;
-                    $gmanager = new GameManager($bdd);
-                    $games = $gmanager->getLast(15);
-                    if (!empty($games)) {
-                        foreach($games as $game) { ?>
-                    <div class="row">
-                        <div class="col-xs-3">
-                        <?php echo showTime($game->getDate()); ?>
-                        </div>
-                        <div class="col-xs-9">
-                        <?php
-                            echo getResult($game, $manager->get($game->getIda())->getName(), '1');
-                            echo " vs ";
-                            echo getResult($game, $manager->get($game->getIdb())->getName(), '2');
-                        ?>
-                        </div>
-                    </div>
-                <?php }} ?>
-            </div>
-      </div>
-    </div>
   </div>
-<?php include_once("inc/footer.php"); ?>
+  <?php include("inc/modal/pmModal.php"); ?>
+    <div class="col-sm-12" id="index-footer">
+        <div class="pull-left" style="padding-top: 15px">Copyright © ChypRiotE 2015</div>
+        <div class="pull-right">
+            <a href="https://www.facebook.com/ChypRiotE"><i id="social" class="fa fa-facebook-square fa-3x social-fb"></i></a>
+            <a href="https://twitter.com/ChypRiotE"><i id="social" class="fa fa-twitter-square fa-3x social-tw"></i></a>
+            <a href="https://plus.google.com/ChypRiotE"><i id="social" class="fa fa-google-plus-square fa-3x social-gp"></i></a>
+            <a data-toggle="modal" data-target="#pmModal" href="#"><i id="social" class="fa fa-envelope-square fa-3x social-em"></i></a>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>

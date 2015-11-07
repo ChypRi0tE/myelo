@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    padding-top: 20px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-nav a {
+    color: #000000;
+}
+.navbar-nav > li>a:hover,
+.navbar-nav > li>a:focus {
+    background-color: transparent;
+    font-size: 15px;
+}
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background-color: transparent;
+}
+
+.notActive{
+    color: #3276b1;
+    background-color: #fff;
+}
+
+/*--------------------------------------*/
+/* Footer */
+/*--------------------------------------*/
+
+
+#index-footer {
+    position: absolute;
+    bottom: 0;
+    height: 45px;
+}
+
+.destacados{
+    padding: 20px 0;
+}
+.destacados-content {
+    background-color: #c8c8c8;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.destacados-tile{
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 30px;
+}
+.destacados-tile img {
+    width:200px;
+    height: 200px;
+}
+.destacados-tile:hover > .destacados-content{
+    margin-top: -10px;
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+    background: rgba(200, 200, 200, 0.1);
+    transition: 0.5s;
+    color:white;
+    cursor: pointer;
+}
+
+.destacados-blog {
+    padding: 0;
+    vertical-align: middle;
+    margin-bottom: 30px;
+    min-height: 200px;
+}
+.destacados-blog img{
+    margin-bottom: 5px;
+}
+.destacados-blog .left-control {
+    height: 100%;
+    min-height: 180px;
+    box-shadow: 2px 0 lightgrey;
+}
+.destacados-blog .left-control hr {
+    margin: 3px;
+    padding: 1px;
+}
+.destacados-blog .left-control i{
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+.destacados-blog .controls {
+    text-align: center;
+}
+.destacados-blog .controls i {
+    font-size: 21px;
+    cursor: pointer;
+}
+.destacados-list > .nav-tabs {
+    border-bottom: none;
+}
+.destacados-list > .nav-tabs a:hover,
+.destacados-list > .nav-tabs >li > a:hover{
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+    background: rgba(0, 0, 0, 0.10);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.destacados-list > .nav-tabs a {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+}
+.destacados-list > .nav-tabs>li.active>a,
+.destacados-list > .nav-tabs>li.active>a:focus,
+.destacados-list > .nav-tabs>li.active>a:hover{
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+
+.destacados-error {
+    text-align: center;
+}
+.destacados-error > div > a:hover{
+    margin-top: -10px;
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+    transition: 0.5s;
+}
+.error-actions {
+    margin-top:15px;
+    margin-bottom:15px;
+}
+.error-actions .btn {
+    margin-right:40px;
+}
+

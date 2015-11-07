@@ -1,15 +1,16 @@
+<?php session_start() ?>
 <!doctype html>
-<?php session_start(); ?>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<meta name="keywords" content="League of Legends, Rating, classement, equipes, ranked team, french, francais">
 	<meta name="description" content="Description">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Elo League France</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/img/favicon-trophy.ico">
+	<title>Classement des teams Françaises</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet/less" type="text/css" href="assets/css/style.less">
 </head>
 <?php	$error='';
 if (isset($_POST['submit'])) {
@@ -27,12 +28,7 @@ if (isset($_POST['submit'])) {
 	}
 }
 ?>
-<?php $_DEBUG_ = false;
-      $_LOCAL_ = false;
-if (isset($_GET['disconnect'])) {
-	session_destroy();
-	header('Location: index.php');
-}
-include_once('inc/connect.php');
-include_once('inc/utils.php');
+<?php   $_DEBUG_ = false;
+    include_once('inc/utils.php');
+    include_once('inc/connect.php');
 ?>

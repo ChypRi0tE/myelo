@@ -33,22 +33,23 @@
                 $gm->setMatchId(0000000000 + rand(1, 999999999));
             }
         }
-        if (!$gm->getRealId()) {$gm->setRealId($gm->getMatchId());}
-        $q = $this->_bdd->prepare('INSERT INTO lol_matches SET matchId = :matchId, summonerId = :summonerId, victory = :victory, matchType = :matchType, matchDuration = :matchDuration, matchCreation = :matchCreation, championId = :championId, teamId = :teamId, spell1 = :spell1, spell2 = :spell2, link = :link, realId = :realId');
-        $q->bindValue(':matchId', $gm->getMatchId(), PDO::PARAM_INT);
-        $q->bindValue(':summonerId', $gm->getSummonerId(), PDO::PARAM_INT);
-        $q->bindValue(':victory', $gm->getVictory(), PDO::PARAM_INT);
-        $q->bindValue(':matchType', $gm->getMatchType());
-        $q->bindValue(':matchDuration', $gm->getMatchDuration(), PDO::PARAM_INT);
-        $q->bindValue(':matchCreation', $gm->getMatchCreation(), PDO::PARAM_INT);
-        $q->bindValue(':championId', $gm->getChampionId(), PDO::PARAM_INT);
-        $q->bindValue(':teamId', $gm->getTeamId(), PDO::PARAM_INT);
-        $q->bindValue(':spell1', $gm->getSpell1(), PDO::PARAM_INT);
-        $q->bindValue(':spell2', $gm->getSpell2(), PDO::PARAM_INT);
-        $q->bindValue(':link', $gm->getLink());
-        $q->bindValue(':realId', $gm->getRealId());
+        $query= "INSERT INTO lol_matches ("
+                . "matchId, summonerId, matchType, matchDuration, matchCreation, victory, championId, teamId, spell1, spell2, link, realId"
+                . ") VALUES ("
+                . "'".$gm->getMatchId()."',"
+                . "'".$gm->getSummonerId()."',"
+                . "'".$gm->getMatchType()."',"
+                . "'".$gm->getMatchDuration()."',"
+                . "'".$gm->getMatchCreation()."',"
+                . "'".$gm->getVictory()."',"
+                . "'".$gm->getChampionId()."',"
+                . "'".$gm->getTeamId()."',"
+                . "'".$gm->getSpell1()."',"
+                . "'".$gm->getSpell2()."',"
+                . "'".$gm->getLink()."',"
+                . "'".$gm->getRealId()."' )";
 
-      $q->execute();
+        $this->_bdd->query($query);
       debug("Match added to the database.");
     }
 

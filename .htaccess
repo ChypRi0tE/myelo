@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteRule ^([a-z\-]+)$   $1.php [L]
+RewriteRule ^api/([a-z\-]+)$   api/$1.php [L]
+RewriteRule ^blog/post-([0-9]+)$   blog.php?id=$1 [L]
+
+ErrorDocument 404 http://chypriote.net/myelo/

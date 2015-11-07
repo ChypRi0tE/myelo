@@ -1,0 +1,218 @@
+@charset "utf-8";
+@black: #000000;
+@blue-fb: #3B5998;
+@blue-tw: #4099FF;
+@blue-lol: #4169E1;
+@red-gp: #d34836;
+@red-alert: #a94442;
+@purple-lol: #7458C1;
+
+body {
+  padding-top: 20px;
+  a:focus {
+    outline: none;
+  }
+}
+.navbar {
+  margin-bottom: 0;
+  .navbar-nav a {
+    color: @black;
+  }
+  .navbar-nav > li>a:hover,
+  .navbar-nav > li>a:focus {
+    background-color: transparent;
+    font-size: 15px;
+  }
+  .open>a, .open>a:hover, .open>a:focus {
+    background-color: transparent;
+  }
+  .icon-bar {
+    background-color: black
+  }
+}
+
+.glickotile {
+  vertical-align: middle;
+  margin-bottom: 30px;
+  .glickotile-content {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    transition: 0.2s;
+  }
+  &:hover > .glickotile-content{
+     margin-bottom: -10px;
+     border: 1px solid rgb(200, 200, 200);
+     box-shadow: rgba(0, 0, 0, 0.1) 0 5px 5px 2px;
+     background: rgb(200, 200, 200);
+     background: rgba(200, 200, 200, 0.1);
+     background-color: #ffffff;
+     transition: 0.5s;
+   }
+}
+#tile-ladder {
+  text-align : center;
+  .team-active {
+    color:black;
+  }
+  .team-inactive {
+    color: grey
+  }
+  .hider:hover{
+    cursor: pointer;
+  }
+  th {
+    text-align: center
+  }
+}
+#tile-team-infos {
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+#tile-team-list {
+  text-align: center;
+  li:hover {
+    cursor: pointer;
+  }
+}
+#tile-team-infos {
+  text-align: center;
+  h3:first-of-type {
+    font-weight: bold;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+#tile-team-players {
+  font-weight: bold;
+  h2 {
+    text-align: center;
+  }
+  img {
+    width: 50x;
+    height: 50px;
+  }
+}
+#tile-team-results {
+  text-align: center;
+  table {
+    margin-bottom: 0;
+  }
+  th {
+    text-align: center;
+  }
+}
+#tile-results-table {
+  text-align: center;
+  table {
+    margin-bottom: 0;
+  }
+  th {
+    text-align: center;
+  }
+  .blue-side {
+    color:@blue-lol;
+  }
+  .purple-side {
+    color: @purple-lol;
+  }
+  .winner {
+    font-weight: bold;
+  }
+  .fixed-table-pagination > .pagination-detail {
+    vertical-align: middle;
+  }
+  .fixed-table-pagination > .pagination{
+    margin-top:-20px;
+    margin-bottom:-20px;
+  }
+}
+#tile-ladder-results {
+  .winner {
+    font-weight: bold;
+  }
+}
+
+#error-message {
+  a {
+    color: @red-alert;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+footer {
+  height: 60px;
+  width: 100%;
+  .footer-links {
+    text-align: left;
+    padding-top: 10px;
+  }
+  .footer-social {
+    -webkit-transform:scale(0.8);
+    -moz-transform:scale(0.8);
+    -o-transform:scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    &:hover {
+      -webkit-transform:scale(1.1);
+      -moz-transform:scale(1.1);
+      -o-transform:scale(1.1);
+    }
+    .social-fb:hover {
+      color: @blue-fb;
+    }
+    .social-tw:hover {
+      color: @blue-tw;
+    }
+    .social-gp:hover {
+      color: @red-gp;
+    }
+    .social-em:hover {
+      color: #f39c12;
+    }
+  }
+}
+
+/*
+** 5 columns grid
+*/
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.col-xs-15 {
+  width: 20%;
+  float: left;
+}
+@media (min-width: 768px) {
+  .col-sm-15 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-15 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-15 {
+    width: 20%;
+    float: left;
+  }
+}
+

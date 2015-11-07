@@ -1,4 +1,5 @@
-  <?php
+<?php
+
   class Team {
     private $_id;
     private $_name;
@@ -7,11 +8,14 @@
     private $_oldrating;
     private $_wins;
     private $_losses;
+    private $_active;
+    private $_logo;
     
     public function __construct(array $data) {
       $this->_played = 0;
       $this->_wins = 0;
       $this->_losses = 0;
+      $this->_active = 1;
 	  	$this->abreuve($data);
       $this->_oldrating = $this->_rating;
 		  debug('Team \'' . $this->_name . '\' created with rating ' . $this->_rating);
@@ -65,6 +69,20 @@
     public function setLosses($losses) {
       $this->_losses = $losses;
     }
+
+      public function getActive() {
+          return $this->_active;
+      }
+      public function setActive($active) {
+          $this->_active = $active;
+      }
+
+      public function getLogo() {
+          return $this->_logo;
+      }
+      public function setLogo($logo) {
+          $this->_logo = $logo;
+      }
     
     public function abreuve(array $data) {
       foreach ($data as $key => $value) {
