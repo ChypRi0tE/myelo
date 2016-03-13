@@ -1,5 +1,5 @@
 <?php
-    set_include_path($_SERVER['DOCUMENT_ROOT'] . "/projects/myelo/");
+    set_include_path($_SERVER['DOCUMENT_ROOT'] . "/myelo/");
     include_once("inc/connect.php");
     include_once("Model/Beans/Team.php");
     include_once("Model/Beans/Player.php");
