@@ -102,7 +102,7 @@ class TeamManager {
       }
       TeamManager::update($a);
 
-      // Updating team b 
+      // Updating team b
       $b = TeamManager::get($gm->getIdb());
       $b->setPlayed($b->getPlayed() + 1);
       $b->setOldrating($b->getRating());
@@ -117,4 +117,3 @@ class TeamManager {
       TeamManager::update($b);
     }
   };
-?>

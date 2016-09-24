@@ -57,56 +57,56 @@
     public function setId($id) {
       $this->id = $id;
     }
-    
+
     public function getIda() {
       return $this->idA;
     }
     public function setIda($id) {
       $this->idA = $id;
     }
-    
+
     public function getIdb() {
       return $this->idB;
     }
     public function setIdb($id) {
       $this->idB = $id;
     }
-    
+
     public function getRatinga() {
       return $this->ratingA;
     }
     public function setRatinga($rate) {
       $this->ratingA = $rate;
     }
-    
+
     public function getRatingb() {
       return $this->ratingB;
     }
     public function setRatingb($rate) {
       $this->ratingB = $rate;
     }
-    
+
     public function getResult() {
       return $this->result;
     }
     public function setResult($res) {
       $this->result = $res;
     }
-    
+
     public function getDate() {
       return $this->date;
     }
     public function setDate($date) {
       $this->date = $date;
     }
-    
+
     public function getNewa() {
       return $this->newA;
     }
     public function setNewa($rate) {
       $this->newA = $rate;
     }
-    
+
     public function getNewb() {
       return $this->newB;
     }
@@ -114,4 +114,3 @@
       $this->newB = $rate;
     }
   };
-?>
