@@ -313,6 +313,14 @@ $(document).ready(function() {
         $(this).closest('.navbar-minimal').toggleClass('open');
         $(this).children().children().toggleClass("fa-list").toggleClass("fa-th-large");
     })
+
+    //I am very lazy
+    $(".team-inactive").fadeToggle();
+    $(this).toggleClass("fa-eye").toggleClass("fa-eye-slash");
+    if ($(this).parent().attr("title") == "Afficher les teams inactives")
+        $(this).parent().attr("title", "Masquer les teams inactives");
+    else
+        $(this).parent().attr("title", "Afficher les teams inactives");
 });
 $( window ).resize(function() {
     if ($('footer').position().top < $(window).height()) {
