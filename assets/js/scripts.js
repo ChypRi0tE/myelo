@@ -316,11 +316,11 @@ $(document).ready(function() {
 
     //I am very lazy
     $(".team-inactive").fadeToggle();
-    $(this).toggleClass("fa-eye").toggleClass("fa-eye-slash");
-    if ($(this).parent().attr("title") == "Afficher les teams inactives")
-        $(this).parent().attr("title", "Masquer les teams inactives");
+    $('.hider').toggleClass("fa-eye").toggleClass("fa-eye-slash");
+    if ($('.hider').parent().attr("title") == "Afficher les teams inactives")
+        $('.hider').parent().attr("title", "Masquer les teams inactives");
     else
-        $(this).parent().attr("title", "Afficher les teams inactives");
+        $('.hider').parent().attr("title", "Afficher les teams inactives");
 });
 $( window ).resize(function() {
     if ($('footer').position().top < $(window).height()) {
